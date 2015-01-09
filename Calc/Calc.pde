@@ -1,6 +1,8 @@
 void setup() {
   size(480, 480);
   rectMode(CENTER);
+  String add = "+";
+  print(add);
 }
 
 void draw() {
@@ -15,5 +17,4 @@ void draw() {
   rect(40, 160, 20, 5); //Sub Symb
   rect(40, 220, 20, 5); rect(40, 210, 5, 5); rect(40, 230, 5, 5); //Div Symb
 }
-void mouseClicked() {
-  
+
