@@ -2,7 +2,7 @@ World world;
 EventManager eventManager;
 
 void setup() {
-  size(640, 360, OPENGL);
+  size(2560, 1440, OPENGL);
   eventManager = new EventManager();
   world = new World();
 }

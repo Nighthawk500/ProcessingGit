@@ -21,7 +21,7 @@ class World {
     float blockSize = width / 6;
     float yBlockCenter = -blockSize /2 ;
     float blockSpacing = blockSize * 2;
-    for (int i = 2; i <5 ; ++i) {
+    for (int i = 2; i <5; ++i) {
       visibles.add(new Block(blockSpacing * i, yBlockCenter, 0, blockSize, blockSize, blockSize, color(255, 0, 0)));
       visibles.add(new Block(-blockSpacing * i, yBlockCenter, 0, blockSize, blockSize, blockSize, color(255, 200, 200)));
       visibles.add(new Block(0, yBlockCenter, blockSpacing * i, blockSize, blockSize, blockSize, color(0, 0, 255)));
@@ -42,6 +42,7 @@ class World {
   void draw() {
     handleInput();
 
+    noCursor();
     //draw sky
     float skyBlueLevel = map(lightLevel(), 0, 1, 100, 255);
     float skyRedLevel = skyBlueLevel * 0.3;
@@ -51,7 +52,7 @@ class World {
     //draw ground
     println(lookDownInPixels);
     if (runningViaJavascript()) {
-      translate(0, 240 - y , 0);
+      translate(0, 240 - y, 0);
     }
     fill(0, 200, 0);
     rotateX(PI / 2 );
@@ -129,8 +130,7 @@ class World {
       //fall back down, but don't fall below zero level.
       if ( y < 0) {
         y += stepSize;
-      } 
-      else {
+      } else {
         y = 0;
       }
     }
